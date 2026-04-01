@@ -10,6 +10,7 @@ stable_baselines3
 alpaca_trade_api
 exchange_calendars
 sb3_contrib
+google-api-python-client
 finrl @ git+https://github.com/AI4Finance-Foundation/FinRL.git
 TA-Lib
 
