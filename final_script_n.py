@@ -11,12 +11,6 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 import datetime as dt
 
-# ==============================================================================
-# ⚠️ CRITICAL CONFIGURATION ⚠️
-# Paste the ID of the Google Drive folder you manually shared with the Service Account.
-# The bot will create the "Trading_Bot" folder INSIDE this shared directory.
-# ==============================================================================
-ROOT_SHARED_FOLDER_ID = "13aEoVnHq9s5WRffwjdz71Ztw4KOCz6Fw"
 
 today = dt.date.today()
 feature_cols  = ['close', 'volume', 'day', 'macd', 'cci_30', 'dx_30', 'close_30_sma', 'close_60_sma', 'vix', 'turbulence', 'daily_return', 'Y_h1', 'Y_h3', 'Y_h5']       
@@ -212,8 +206,7 @@ if __name__ == '__main__':
 
     # 1. Login
     service = authenticate_drive()
-
-   print(f"----- Setting up Drive Structure -----")
+    print(f"----- Setting up Drive Structure -----")
     
     # 1. Hardcode your Trading_Bot folder ID here
     #TRADING_BOT_FOLDER_ID = "PASTE_YOUR_TRADING_BOT_FOLDER_ID_HERE"
@@ -221,7 +214,9 @@ if __name__ == '__main__':
     
     # 2. Create the daily folder directly inside Trading_Bot
     TARGET_FOLDER = f"{today}"
-    sub_folder_id = get_or_create_folder(service, TARGET_FOLDER, parent_id=TRADING_BOT_FOLDER_ID) 
+    sub_folder_id = get_or_create_folder(service, TARGET_FOLDER, parent_id=TRADING_BOT_FOLDER_ID)
+
+    
     # 3. Upload Text File
     if os.path.exists(f"ensemble_results_{today}.txt"):
         upload_file(service, f"ensemble_results_{today}.txt", sub_folder_id, "text/plain")
