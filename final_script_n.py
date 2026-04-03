@@ -10,6 +10,8 @@ import json
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 import datetime as dt
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
 
 
 today = dt.date.today()
@@ -44,19 +46,21 @@ today = dt.date.today()
 SCOPES = ['https://www.googleapis.com/auth/drive']
 
 def authenticate_drive():
-    """Authenticates using a Service Account from an environment variable."""
-    creds_json_str = os.environ.get('GCP_SERVICE_ACCOUNT_KEY')
+    """Authenticates using an OAuth User Token from a GitHub Secret."""
     
-    if not creds_json_str:
-        raise ValueError("GCP_SERVICE_ACCOUNT_KEY environment variable is missing!")
+    # Grab the JSON string from the GitHub Secret
+    token_json_str = os.environ.get('DRIVE_TOKEN_JSON')
     
-    creds_dict = json.loads(creds_json_str)
+    if not token_json_str:
+        raise ValueError("DRIVE_TOKEN_JSON environment variable is missing!")
     
-    creds = service_account.Credentials.from_service_account_info(
-        creds_dict, scopes=SCOPES)
+    # Parse it back into a dictionary
+    creds_dict = json.loads(token_json_str)
+    
+    # Authenticate as YOU (the human user) instead of a Service Account
+    creds = Credentials.from_authorized_user_info(creds_dict, SCOPES)
     
     return build('drive', 'v3', credentials=creds)
-
 def get_or_create_folder(service, folder_name, parent_id=None):
     """
     Creates a folder. If parent_id is provided, creates it INSIDE that folder.
