@@ -5,7 +5,7 @@ on:
     # Runs at 11:00 PM UTC Monday-Friday 
     # Adjust the cron schedule to match when your market data is ready
     # changing the schedule to run at 15,30,45 minutes of 10,11 A.M IST. 
-    - cron: '15,30,45 4,5 * * 1-5'
+    - cron: '50 3 * * 1-5'
   workflow_dispatch: # Allows you to run it manually from the Actions tab
 
 jobs:
