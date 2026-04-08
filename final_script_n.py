@@ -27,7 +27,9 @@ tickers = [
     "ANDHRSUGAR.NS",
     "TTKPRESTIG.NS",
     "MOTHERSON.NS",
-    "SHANTIGEAR.NS"
+    "SHANTIGEAR.NS",
+    "LTF.NS"
+           
 ]
 
 tickerconfig = TickerDownloadConfig(
