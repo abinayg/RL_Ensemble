@@ -34,3 +34,12 @@ jobs:
           GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
         run: |
           python final_script_n.py
+
+      # Turn off comments once the script is available
+      #- name: Run Angel One Allocation Script
+      #  env:
+      #    ANGEL_API_KEY: ${{ secrets.ANGEL_API_KEY }}
+      #    ANGEL_PIN: ${{ secrets.ANGEL_PIN }}
+      #    ANGEL_TOTP_SECRET: ${{ secrets.ANGEL_TOTP_SECRET }}
+      #  run: python your_script_name.py
+       
