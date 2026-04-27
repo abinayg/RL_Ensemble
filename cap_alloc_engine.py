@@ -271,17 +271,18 @@ def calculate_allocations(live_trade, principal_amount, signal_file, target_tick
         smartApi.terminateSession(CLIENT_CODE)
 
     # --- SAVE TEXT FILE AND UPLOAD TO GOOGLE DRIVE ---
-    filename = "cap_alloc.txt"
+    today_str = str(dt.date.today())
+    filename = f"cap_alloc_{today_str}.txt"
+    
     with open(filename, "w", encoding="utf-8") as f:
         f.write("\n".join(report_lines))
     
-    print("\n----- Uploading Allocation Report to Google Drive -----")
+    print(f"\n----- Uploading {filename} to Google Drive -----")
     try:
         service = authenticate_drive()
-        today_str = str(dt.date.today())
         sub_folder_id = get_or_create_folder(service, today_str, parent_id=TRADING_BOT_FOLDER_ID)
         upload_file(service, filename, sub_folder_id, "text/plain")
-        print("✅ cap_alloc.txt successfully uploaded to Drive!")
+        print(f"✅ {filename} successfully uploaded to Drive!")
     except Exception as e:
         print(f"❌ Failed to upload to Google Drive: {e}")
 
