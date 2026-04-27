@@ -15,5 +15,6 @@ finrl @ git+https://github.com/AI4Finance-Foundation/FinRL.git
 TA-Lib
 smartapi-python
 pyotp
+logzero
 python-dotenv
 
