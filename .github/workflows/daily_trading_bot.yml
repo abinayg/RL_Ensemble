@@ -42,5 +42,5 @@ jobs:
           ANGEL_PIN: ${{ secrets.ANGEL_PIN }}
           ANGEL_TOTP_SECRET: ${{ secrets.ANGEL_TOTP_SECRET }}
           ANGEL_CLIENT_ID: ${{ secrets.ANGEL_CLIENT_ID }}
-        run: python cap_alloc_engine.py -live_trade 0 --principal_amount 20000  --target_tickers MOTHERSON VEDL LTF POWERGRID SHRIRAMFIN 
+        run: python cap_alloc_engine.py --live_trade 0 --principal_amount 20000  --target_tickers MOTHERSON VEDL LTF POWERGRID SHRIRAMFIN 
        
