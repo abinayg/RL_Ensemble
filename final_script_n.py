@@ -28,7 +28,8 @@ tickers = [
     "TTKPRESTIG.NS",
     "MOTHERSON.NS",
     "SHANTIGEAR.NS",
-    "LTF.NS"
+    "LTF.NS",
+    "HINDZINC.NS"
            
 ]
 
