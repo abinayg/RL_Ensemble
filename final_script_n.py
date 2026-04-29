@@ -29,7 +29,9 @@ tickers = [
     "MOTHERSON.NS",
     "SHANTIGEAR.NS",
     "LTF.NS",
-    "HINDZINC.NS"
+    "HINDZINC.NS",
+    "IONEXCHANG.NS",
+    "COALINDIA.NS"
            
 ]
 
