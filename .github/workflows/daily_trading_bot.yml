@@ -44,5 +44,5 @@ jobs:
           ANGEL_CLIENT_ID: ${{ secrets.ANGEL_CLIENT_ID }}
           DRIVE_TOKEN_JSON: ${{ secrets.DRIVE_TOKEN_JSON }}
           GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-        run: python cap_alloc_engine.py --live_trade 0 --principal_amount 20000  --target_tickers MOTHERSON VEDL LTF POWERGRID SHRIRAMFIN 
+        run: python cap_alloc_engine.py --live_trade 1 --target_tickers VEDL ICICIBANK SBIN LTF POWERGRID 
        
