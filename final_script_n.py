@@ -31,7 +31,9 @@ tickers = [
     "LTF.NS",
     "HINDZINC.NS",
     "IONEXCHANG.NS",
-    "COALINDIA.NS"
+    "COALINDIA.NS",
+    "ICICIBANK.NS",
+    "SBIN.NS"
            
 ]
 
