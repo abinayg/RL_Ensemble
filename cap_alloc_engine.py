@@ -21,7 +21,7 @@ CLIENT_CODE = os.environ.get("ANGEL_CLIENT_ID")
 PASSWORD = os.environ.get("ANGEL_PIN")          
 TOTP_SECRET = os.environ.get("ANGEL_TOTP_SECRET") 
 
-FEE_BUFFER = 0.005  # 0.5% buffer for AngelOne STT, DP charges, and slippage
+FEE_BUFFER = 0.006  # 0.5% buffer for AngelOne STT, DP charges, and slippage
 
 # --- GOOGLE DRIVE FUNCTIONS ---
 SCOPES = ['https://www.googleapis.com/auth/drive']
