@@ -1,12 +1,12 @@
 name: Daily Trading Bot Ensemble
 
 on:
-  schedule:
+  #schedule:
     # Runs at 11:00 PM UTC Monday-Friday 
     # Adjust the cron schedule to match when your market data is ready
     # changing the schedule to run at 9:05 am IST every weekday
-    - cron: '05 9 * * 1-5'
-      timezone: 'Asia/Kolkata'
+    #- cron: '05 9 * * 1-5'
+    #  timezone: 'Asia/Kolkata'
   workflow_dispatch: # Allows you to run it manually from the Actions tab
 
 jobs:
