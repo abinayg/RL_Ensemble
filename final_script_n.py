@@ -33,7 +33,8 @@ tickers = [
     "IONEXCHANG.NS",
     "COALINDIA.NS",
     "ICICIBANK.NS",
-    "SBIN.NS"
+    "SBIN.NS",
+    "HFCL.NS"
            
 ]
 
